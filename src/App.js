@@ -3,17 +3,9 @@ import { useEffect, useState } from "react";
 
 console.clear();
 
-
-
-
-
-
 export default function App() {
-
+  /*  
 const [item, setItem] = useState([]);
-
-
-
 
 
   useEffect(() => {
@@ -30,15 +22,7 @@ const [item, setItem] = useState([]);
     }
   }
 
-
-  
-  
-
-
-
-
-
-
+*/
 
   return (
     <div className="App">
