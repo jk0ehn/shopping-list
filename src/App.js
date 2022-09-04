@@ -4,21 +4,18 @@ import { useEffect, useState } from "react";
 console.clear();
 
 export default function App() {
-  const [item, setItem] = useState([]);
+  const [data, setData] = useState([]);
 
   useEffect(() => {
-    loadItem();
-    async function loadItem() {
-      try {
-        const response = await fetch(
-          "https://fetch-me.vercel.app/api/shopping/items"
-        );
-        const data = await response.json();
-        setItem(data.type);
-        console.log(data.type);
-      } catch (error) {
-        console.log(error);
-      }
+    fetchData();
+
+    async function fetchData() {
+      const response = await fetch(
+        "https://fetch-me.vercel.app/api/shopping/items"
+      );
+      const item = await response.json();
+      setData(item.data);
+      console.log(item.data);
     }
   }, []);
 
@@ -26,7 +23,13 @@ export default function App() {
     <div className="App">
       <div className="header">SHOPPING LIST</div>
       <div className="main">
+        <div className="itemcards">
+          <p>itemcards</p>
+        </div>
         <input placeholder="Was brauchst du?"></input>
+        <div className="itemcards">
+          <p>itemcards</p>
+        </div>
       </div>
       <div className="footer">
         <svg
