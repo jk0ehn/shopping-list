@@ -4,25 +4,23 @@ import { useEffect, useState } from "react";
 console.clear();
 
 export default function App() {
-  /*  
-const [item, setItem] = useState([]);
-
+  const [item, setItem] = useState([]);
 
   useEffect(() => {
-  
-    loadItem(); }, []);
-  
-  async function loadItem() {
-    try {
-      const response = await  fetch("https://fetch-me.vercel.app/api/shopping/items");
-      const data = await response.json();
-      setItem(data.shoppingitem);
-      console.log(data.shopping.item);
-  
+    loadItem();
+    async function loadItem() {
+      try {
+        const response = await fetch(
+          "https://fetch-me.vercel.app/api/shopping/items"
+        );
+        const data = await response.json();
+        setItem(data.type);
+        console.log(data.type);
+      } catch (error) {
+        console.log(error);
+      }
     }
-  }
-
-*/
+  }, []);
 
   return (
     <div className="App">
